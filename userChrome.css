@@ -1,0 +1,63 @@
+/* Settings
+    Use 1 for true/yes
+    Use 0 for false/no */
+
+:root {
+  --displayhistorybuttons: 1;  /* Show back and forward buttons */
+  --movehamburger: 1;          /* Move the main menu button to the far left */
+  --navbar-width: 40vw;        /* How much space the address bar gets */
+  --tabs-width: 1fr;           /* Let tabs fill the remaining space */
+}
+
+#navigator-toolbox {
+  display: grid !important;
+  grid-template-columns: var(--navbar-width) var(--tabs-width) !important;
+}
+
+#nav-bar {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  background: transparent !important;
+}
+
+#PanelUI-button {
+  order: calc(var(--movehamburger) * -1) !important;
+  margin-right: calc(var(--movehamburger) * 6px) !important;
+}
+
+#back-button, #forward-button {
+  opacity: var(--displayhistorybuttons) !important;
+  visibility: calc(var(--displayhistorybuttons) * 1) !important;
+  max-width: calc(var(--displayhistorybuttons) * 40px) !important;
+  transform: scale(var(--displayhistorybuttons)) !important;
+  pointer-events: calc(var(--displayhistorybuttons) * 1) !important;
+  transition: max-width 0.15s ease, opacity 0.15s ease, transform 0.15s ease !important;
+}
+
+#TabsToolbar {
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+  background: transparent !important;
+}
+
+#navigator-toolbox, #nav-bar, #TabsToolbar {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.titlebar-buttonbox-container {
+	padding: 6px 6px 6px 0;
+}
+.titlebar-button {
+	padding: var(--toolbarbutton-padding-inner) !important;
+	border-radius: var(--toolbarbutton-border-radius);
+}
+.titlebar-button::before {
+	min-width: 16px;
+	min-height: 16px;
+	display: flex !important;
+	justify-content: center;
+	align-items: center;
+}
