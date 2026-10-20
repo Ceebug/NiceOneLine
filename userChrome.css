@@ -25,15 +25,25 @@
 #PanelUI-button {
   order: calc(var(--movehamburger) * -1) !important;
   margin-right: calc(var(--movehamburger) * 6px) !important;
+  margin-left: 6px
 }
 
 #back-button, #forward-button {
   opacity: var(--displayhistorybuttons) !important;
-  visibility: calc(var(--displayhistorybuttons) * 1) !important;
   max-width: calc(var(--displayhistorybuttons) * 40px) !important;
   transform: scale(var(--displayhistorybuttons)) !important;
-  pointer-events: calc(var(--displayhistorybuttons) * 1) !important;
   transition: max-width 0.15s ease, opacity 0.15s ease, transform 0.15s ease !important;
+}
+
+#back-button[disabled="true"], #forward-button[disabled="true"] {
+  pointer-events: none !important;
+}
+
+@container style(--displayhistorybuttons: 0) {
+  #back-button, #forward-button {
+    pointer-events: none !important;
+    visibility: collapse !important;
+  }
 }
 
 #TabsToolbar {
