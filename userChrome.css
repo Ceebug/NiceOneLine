@@ -71,3 +71,10 @@
 	justify-content: center;
 	align-items: center;
 }
+
+#back-button[disabled="true"], #forward-button[disabled="true"] {
+  pointer-events: none !important;
+  opacity: calc(var(--displayhistorybuttons) * 0.4) !important; /* Forces it to stay visible if active, but faded */
+  max-width: calc(var(--displayhistorybuttons) * 40px) !important;
+  transform: scale(var(--displayhistorybuttons)) !important;
+}
